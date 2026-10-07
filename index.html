@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>质量工程师 | 个人作品集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Noto+Sans+SC:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-bar {
+            transition: width 1s ease-out;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #e5e7eb, #d1d5db);
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 12px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid #0ea5e9;
+            z-index: 1;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #0ea5e9;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .quiz-option {
+            transition: all 0.2s ease;
+        }
+        
+        .quiz-option:hover {
+            border-color: #0ea5e9;
+            background: #f0f9ff;
+        }
+        
+        .quiz-option.correct {
+            border-color: #10b981;
+            background: #ecfdf5;
+        }
+        
+        .quiz-option.wrong {
+            border-color: #ef4444;
+            background: #fef2f2;
+        }
+        
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: blob 8s infinite;
+        }
+        
+        @keyframes blob {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+        
+        .project-tag {
+            transition: all 0.2s ease;
+        }
+        
+        .project-tag:hover {
+            transform: scale(1.05);
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.-bottom-4{bottom:-1rem}.-left-20{left:-5rem}.-right-20{right:-5rem}.-right-4{right:-1rem}.bottom-20{bottom:5rem}.bottom-8{bottom:2rem}.left-0{left:0px}.left-1\/2{left:50%}.right-0{right:0px}.right-8{right:2rem}.top-0{top:0px}.top-1{top:0.25rem}.top-20{top:5rem}.z-10{z-index:10}.z-40{z-index:40}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-3{margin-left:0.75rem}.mt-1{margin-top:0.25rem}.mt-16{margin-top:4rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-1{height:0.25rem}.h-10{height:2.5rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-2{height:0.5rem}.h-48{height:12rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-64{height:16rem}.h-7{height:1.75rem}.h-72{height:18rem}.h-80{height:20rem}.h-96{height:24rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-12{width:3rem}.w-14{width:3.5rem}.w-20{width:5rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-64{width:16rem}.w-7{width:1.75rem}.w-72{width:18rem}.w-80{width:20rem}.w-96{width:24rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.max-w-6xl{max-width:72rem}.max-w-lg{max-width:32rem}.max-w-md{max-width:28rem}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.animate-bounce{animation:bounce 1s infinite}.resize-none{resize:none}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-12{gap:3rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.-space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(-0.5rem * var(--tw-space-x-reverse));margin-left:calc(-0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-8 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(2rem * var(--tw-space-x-reverse));margin-left:calc(2rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-1\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.375rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.375rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-gray-800{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.bg-amber-100{--tw-bg-opacity:1;background-color:rgb(254 243 199 / var(--tw-bg-opacity, 1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235 / var(--tw-bg-opacity, 1))}.bg-cyan-100{--tw-bg-opacity:1;background-color:rgb(207 250 254 / var(--tw-bg-opacity, 1))}.bg-cyan-200{--tw-bg-opacity:1;background-color:rgb(165 243 252 / var(--tw-bg-opacity, 1))}.bg-cyan-50{--tw-bg-opacity:1;background-color:rgb(236 254 255 / var(--tw-bg-opacity, 1))}.bg-emerald-50{--tw-bg-opacity:1;background-color:rgb(236 253 245 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.bg-rose-50{--tw-bg-opacity:1;background-color:rgb(255 241 242 / var(--tw-bg-opacity, 1))}.bg-sky-100{--tw-bg-opacity:1;background-color:rgb(224 242 254 / var(--tw-bg-opacity, 1))}.bg-sky-200{--tw-bg-opacity:1;background-color:rgb(186 230 253 / var(--tw-bg-opacity, 1))}.bg-sky-50{--tw-bg-opacity:1;background-color:rgb(240 249 255 / var(--tw-bg-opacity, 1))}.bg-sky-600{--tw-bg-opacity:1;background-color:rgb(2 132 199 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-violet-50{--tw-bg-opacity:1;background-color:rgb(245 243 255 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.bg-white\/20{background-color:rgb(255 255 255 / 0.2)}.bg-white\/80{background-color:rgb(255 255 255 / 0.8)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-amber-400{--tw-gradient-from:#fbbf24 var(--tw-gradient-from-position);--tw-gradient-to:rgb(251 191 36 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-emerald-400{--tw-gradient-from:#34d399 var(--tw-gradient-from-position);--tw-gradient-to:rgb(52 211 153 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-gray-900{--tw-gradient-from:#111827 var(--tw-gradient-from-position);--tw-gradient-to:rgb(17 24 39 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-rose-400{--tw-gradient-from:#fb7185 var(--tw-gradient-from-position);--tw-gradient-to:rgb(251 113 133 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-sky-400{--tw-gradient-from:#38bdf8 var(--tw-gradient-from-position);--tw-gradient-to:rgb(56 189 248 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-sky-500{--tw-gradient-from:#0ea5e9 var(--tw-gradient-from-position);--tw-gradient-to:rgb(14 165 233 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-slate-400{--tw-gradient-from:#94a3b8 var(--tw-gradient-from-position);--tw-gradient-to:rgb(148 163 184 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-violet-400{--tw-gradient-from:#a78bfa var(--tw-gradient-from-position);--tw-gradient-to:rgb(167 139 250 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-sky-50{--tw-gradient-from:#f0f9ff var(--tw-gradient-from-position);--tw-gradient-to:rgb(240 249 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-cyan-400{--tw-gradient-to:#22d3ee var(--tw-gradient-to-position)}.to-cyan-500{--tw-gradient-to:#06b6d4 var(--tw-gradient-to-position)}.to-gray-600{--tw-gradient-to:#4b5563 var(--tw-gradient-to-position)}.to-gray-800{--tw-gradient-to:#1f2937 var(--tw-gradient-to-position)}.to-orange-500{--tw-gradient-to:#f97316 var(--tw-gradient-to-position)}.to-pink-500{--tw-gradient-to:#ec4899 var(--tw-gradient-to-position)}.to-purple-500{--tw-gradient-to:#a855f7 var(--tw-gradient-to-position)}.to-teal-500{--tw-gradient-to:#14b8a6 var(--tw-gradient-to-position)}.to-cyan-50{--tw-gradient-to:#ecfeff var(--tw-gradient-to-position)}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pl-12{padding-left:3rem}.pt-20{padding-top:5rem}.pt-8{padding-top:2rem}.text-center{text-align:center}.text-right{text-align:right}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-8xl{font-size:6rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-light{font-weight:300}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6 / var(--tw-text-opacity, 1))}.text-cyan-600{--tw-text-opacity:1;color:rgb(8 145 178 / var(--tw-text-opacity, 1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-rose-600{--tw-text-opacity:1;color:rgb(225 29 72 / var(--tw-text-opacity, 1))}.text-sky-100{--tw-text-opacity:1;color:rgb(224 242 254 / var(--tw-text-opacity, 1))}.text-sky-600{--tw-text-opacity:1;color:rgb(2 132 199 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-violet-600{--tw-text-opacity:1;color:rgb(124 58 237 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.opacity-100{opacity:1}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:border-gray-300:hover{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.hover\:border-gray-400:hover{--tw-border-opacity:1;border-color:rgb(156 163 175 / var(--tw-border-opacity, 1))}.hover\:bg-gray-700:hover{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-800:hover{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.hover\:bg-sky-700:hover{--tw-bg-opacity:1;background-color:rgb(3 105 161 / var(--tw-bg-opacity, 1))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.hover\:text-sky-700:hover{--tw-text-opacity:1;color:rgb(3 105 161 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.focus\:border-sky-500:focus{--tw-border-opacity:1;border-color:rgb(14 165 233 / var(--tw-border-opacity, 1))}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-sky-100:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(224 242 254 / var(--tw-ring-opacity, 1))}@media (min-width: 768px){.md\:col-span-2{grid-column:span 2 / span 2}.md\:mt-0{margin-top:0px}.md\:flex{display:flex}.md\:hidden{display:none}.md\:h-72{height:18rem}.md\:h-80{height:20rem}.md\:w-72{width:18rem}.md\:w-80{width:20rem}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:p-12{padding:3rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}</style><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.-bottom-4{bottom:-1rem}.-left-20{left:-5rem}.-right-20{right:-5rem}.-right-4{right:-1rem}.bottom-20{bottom:5rem}.bottom-3{bottom:0.75rem}.bottom-8{bottom:2rem}.left-0{left:0px}.left-1\/2{left:50%}.right-0{right:0px}.right-3{right:0.75rem}.right-8{right:2rem}.top-0{top:0px}.top-20{top:5rem}.top-3{top:0.75rem}.z-10{z-index:10}.z-40{z-index:40}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-1{margin-left:0.25rem}.ml-3{margin-left:0.75rem}.mt-1{margin-top:0.25rem}.mt-16{margin-top:4rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.aspect-\[9\/16\]{aspect-ratio:9/16}.h-1{height:0.25rem}.h-10{height:2.5rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-2{height:0.5rem}.h-48{height:12rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-64{height:16rem}.h-7{height:1.75rem}.h-72{height:18rem}.h-80{height:20rem}.h-96{height:24rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-12{width:3rem}.w-14{width:3.5rem}.w-20{width:5rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-64{width:16rem}.w-7{width:1.75rem}.w-72{width:18rem}.w-80{width:20rem}.w-96{width:24rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.max-w-6xl{max-width:72rem}.max-w-lg{max-width:32rem}.max-w-md{max-width:28rem}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.animate-bounce{animation:bounce 1s infinite}.resize-none{resize:none}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-12{gap:3rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.-space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(-0.5rem * var(--tw-space-x-reverse));margin-left:calc(-0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-8 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(2rem * var(--tw-space-x-reverse));margin-left:calc(2rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-1\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.375rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.375rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-gray-800{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235 / var(--tw-bg-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-black\/30{background-color:rgb(0 0 0 / 0.3)}.bg-black\/50{background-color:rgb(0 0 0 / 0.5)}.bg-black\/70{background-color:rgb(0 0 0 / 0.7)}.bg-cyan-100{--tw-bg-opacity:1;background-color:rgb(207 250 254 / var(--tw-bg-opacity, 1))}.bg-cyan-200{--tw-bg-opacity:1;background-color:rgb(165 243 252 / var(--tw-bg-opacity, 1))}.bg-emerald-50{--tw-bg-opacity:1;background-color:rgb(236 253 245 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.bg-rose-50{--tw-bg-opacity:1;background-color:rgb(255 241 242 / var(--tw-bg-opacity, 1))}.bg-sky-100{--tw-bg-opacity:1;background-color:rgb(224 242 254 / var(--tw-bg-opacity, 1))}.bg-sky-200{--tw-bg-opacity:1;background-color:rgb(186 230 253 / var(--tw-bg-opacity, 1))}.bg-sky-50{--tw-bg-opacity:1;background-color:rgb(240 249 255 / var(--tw-bg-opacity, 1))}.bg-sky-600{--tw-bg-opacity:1;background-color:rgb(2 132 199 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-violet-50{--tw-bg-opacity:1;background-color:rgb(245 243 255 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.bg-white\/20{background-color:rgb(255 255 255 / 0.2)}.bg-white\/80{background-color:rgb(255 255 255 / 0.8)}.bg-white\/90{background-color:rgb(255 255 255 / 0.9)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-amber-400{--tw-gradient-from:#fbbf24 var(--tw-gradient-from-position);--tw-gradient-to:rgb(251 191 36 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-emerald-400{--tw-gradient-from:#34d399 var(--tw-gradient-from-position);--tw-gradient-to:rgb(52 211 153 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-gray-200{--tw-gradient-from:#e5e7eb var(--tw-gradient-from-position);--tw-gradient-to:rgb(229 231 235 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-gray-900{--tw-gradient-from:#111827 var(--tw-gradient-from-position);--tw-gradient-to:rgb(17 24 39 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-indigo-400{--tw-gradient-from:#818cf8 var(--tw-gradient-from-position);--tw-gradient-to:rgb(129 140 248 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-lime-400{--tw-gradient-from:#a3e635 var(--tw-gradient-from-position);--tw-gradient-to:rgb(163 230 53 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-rose-400{--tw-gradient-from:#fb7185 var(--tw-gradient-from-position);--tw-gradient-to:rgb(251 113 133 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-sky-400{--tw-gradient-from:#38bdf8 var(--tw-gradient-from-position);--tw-gradient-to:rgb(56 189 248 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-sky-50{--tw-gradient-from:#f0f9ff var(--tw-gradient-from-position);--tw-gradient-to:rgb(240 249 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-sky-500{--tw-gradient-from:#0ea5e9 var(--tw-gradient-from-position);--tw-gradient-to:rgb(14 165 233 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-slate-400{--tw-gradient-from:#94a3b8 var(--tw-gradient-from-position);--tw-gradient-to:rgb(148 163 184 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-violet-400{--tw-gradient-from:#a78bfa var(--tw-gradient-from-position);--tw-gradient-to:rgb(167 139 250 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-blue-500{--tw-gradient-to:rgb(59 130 246 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #3b82f6 var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-cyan-500{--tw-gradient-to:rgb(6 182 212 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #06b6d4 var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-gray-600{--tw-gradient-to:rgb(75 85 99 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #4b5563 var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-green-500{--tw-gradient-to:rgb(34 197 94 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #22c55e var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-orange-500{--tw-gradient-to:rgb(249 115 22 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #f97316 var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-pink-500{--tw-gradient-to:rgb(236 72 153 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #ec4899 var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-purple-500{--tw-gradient-to:rgb(168 85 247 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #a855f7 var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-teal-500{--tw-gradient-to:rgb(20 184 166 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #14b8a6 var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-cyan-400{--tw-gradient-to:#22d3ee var(--tw-gradient-to-position)}.to-cyan-50{--tw-gradient-to:#ecfeff var(--tw-gradient-to-position)}.to-cyan-500{--tw-gradient-to:#06b6d4 var(--tw-gradient-to-position)}.to-cyan-600{--tw-gradient-to:#0891b2 var(--tw-gradient-to-position)}.to-emerald-600{--tw-gradient-to:#059669 var(--tw-gradient-to-position)}.to-fuchsia-600{--tw-gradient-to:#c026d3 var(--tw-gradient-to-position)}.to-gray-300{--tw-gradient-to:#d1d5db var(--tw-gradient-to-position)}.to-gray-600{--tw-gradient-to:#4b5563 var(--tw-gradient-to-position)}.to-gray-800{--tw-gradient-to:#1f2937 var(--tw-gradient-to-position)}.to-orange-500{--tw-gradient-to:#f97316 var(--tw-gradient-to-position)}.to-pink-500{--tw-gradient-to:#ec4899 var(--tw-gradient-to-position)}.to-purple-500{--tw-gradient-to:#a855f7 var(--tw-gradient-to-position)}.to-red-500{--tw-gradient-to:#ef4444 var(--tw-gradient-to-position)}.to-sky-600{--tw-gradient-to:#0284c7 var(--tw-gradient-to-position)}.to-teal-500{--tw-gradient-to:#14b8a6 var(--tw-gradient-to-position)}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pt-20{padding-top:5rem}.pt-8{padding-top:2rem}.text-center{text-align:center}.text-right{text-align:right}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-8xl{font-size:6rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-light{font-weight:300}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6 / var(--tw-text-opacity, 1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-rose-600{--tw-text-opacity:1;color:rgb(225 29 72 / var(--tw-text-opacity, 1))}.text-sky-100{--tw-text-opacity:1;color:rgb(224 242 254 / var(--tw-text-opacity, 1))}.text-sky-600{--tw-text-opacity:1;color:rgb(2 132 199 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-violet-600{--tw-text-opacity:1;color:rgb(124 58 237 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.opacity-100{opacity:1}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:border-gray-300:hover{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.hover\:border-gray-400:hover{--tw-border-opacity:1;border-color:rgb(156 163 175 / var(--tw-border-opacity, 1))}.hover\:bg-gray-700:hover{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-800:hover{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.hover\:bg-sky-700:hover{--tw-bg-opacity:1;background-color:rgb(3 105 161 / var(--tw-bg-opacity, 1))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.hover\:text-sky-700:hover{--tw-text-opacity:1;color:rgb(3 105 161 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.focus\:border-sky-500:focus{--tw-border-opacity:1;border-color:rgb(14 165 233 / var(--tw-border-opacity, 1))}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-sky-100:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(224 242 254 / var(--tw-ring-opacity, 1))}.group:hover .group-hover\:text-sky-600{--tw-text-opacity:1;color:rgb(2 132 199 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width: 768px){.md\:col-span-2{grid-column:span 2 / span 2}.md\:mt-0{margin-top:0px}.md\:flex{display:flex}.md\:hidden{display:none}.md\:h-72{height:18rem}.md\:h-80{height:20rem}.md\:w-72{width:18rem}.md\:w-80{width:20rem}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:p-12{padding:3rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}</style></head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-xl font-bold gradient-text">Quality Engineer</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
+                <a href="#about" class="nav-link hover:text-gray-900">关于我</a>
+                <a href="#skills" class="nav-link hover:text-gray-900">技能专长</a>
+                <a href="#experience" class="nav-link hover:text-gray-900">抖音精选</a>
+                <a href="#projects" class="nav-link hover:text-gray-900">项目案例</a>
+                <a href="#training" class="nav-link hover:text-gray-900">培训课堂</a>
+                <a href="#quiz" class="nav-link hover:text-gray-900">知识测验</a>
+                <a href="#contact" class="nav-link hover:text-gray-900">联系我</a>
+            </div>
+            <button id="menuBtn" class="md:hidden text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-6 py-4 space-y-3 text-sm font-medium text-gray-600">
+                <a href="#about" class="block hover:text-gray-900">关于我</a>
+                <a href="#skills" class="block hover:text-gray-900">技能专长</a>
+                <a href="#douyin" class="block hover:text-gray-900">抖音精选</a>
+                <a href="#projects" class="block hover:text-gray-900">项目案例</a>
+                <a href="#training" class="block hover:text-gray-900">培训课堂</a>
+                <a href="#quiz" class="block hover:text-gray-900">知识测验</a>
+                <a href="#contact" class="block hover:text-gray-900">联系我</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div class="blob w-96 h-96 bg-sky-200 top-20 -left-20"></div>
+        <div class="blob w-80 h-80 bg-cyan-200 bottom-20 -right-20" style="animation-delay: -4s;"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 py-20 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in visible">
+                    <p class="text-sky-600 font-medium mb-4">你好，我是</p>
+                    <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4">质量<span class="gradient-text">学长</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl text-gray-600 mb-6 font-light">
+                        汽车行业质量专家</h2>
+                    <p class="text-gray-500 text-lg leading-relaxed mb-8 max-w-lg">
+                        专注于汽车零部件质量管理十余年，精通IATF16949体系、六大质量工具及持续改进方法论。
+                        致力于用数据驱动质量提升，为客户创造卓越价值。
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects" class="px-8 py-3 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-colors">
+                            查看作品
+                        </a>
+                        <a href="#contact" class="px-8 py-3 border-2 border-gray-300 text-gray-700 rounded-full font-medium hover:border-gray-400 transition-colors">
+                            联系我
+                        </a>
+                    </div>
+                </div>
+                <div class="fade-in flex justify-center visible" style="transition-delay: 0.2s;">
+                    <div class="relative">
+                        <div class="w-72 h-72 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-sky-400 to-cyan-400 flex items-center justify-center">
+                            <div class="w-64 h-64 md:w-72 md:h-72 rounded-full bg-gray-100 flex items-center justify-center text-8xl">
+                                👨‍🔧
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-white rounded-2xl shadow-xl px-6 py-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl">
+                                    ✓
+                                </div>
+                                <div>
+                                    <p class="text-2xl font-bold text-gray-900">10+</p>
+                                    <p class="text-sm text-gray-500">年质量经验</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in visible">
+                <p class="text-sky-600 font-medium mb-2">About Me</p>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">关于我</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-sky-500 to-cyan-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="md:col-span-2 fade-in visible">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">专注质量，追求卓越</h3>
+                    <div class="space-y-4 text-gray-600 leading-relaxed">
+                        <p>
+                            我是一名拥有十余年汽车行业质量管理经验的质量工程师，毕业于车辆工程专业。
+                            从零部件供应商到整车厂，我积累了丰富的质量体系建设、过程质量控制、
+                            供应商质量管理及客户投诉处理经验。
+                        </p>
+                        <p>
+                            我坚信"质量是设计出来的，不是检验出来的"。在工作中，我善于运用
+                            FMEA、SPC、MSA、APQP、PPAP、CP 等六大质量工具，结合精益六西格玛方法论，
+                            推动源头质量改进，实现质量与成本的最优平衡。
+                        </p>
+                        <p>
+                            除了本职工作，我热衷于质量知识的分享与传播。我曾在公司内部主导
+                            质量培训课程，帮助超过200名同事提升质量意识和工具应用能力。
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="space-y-6 fade-in visible" style="transition-delay: 0.2s;">
+                    <div class="bg-gray-50 rounded-2xl p-6 card-hover">
+                        <div class="text-4xl font-bold gradient-text mb-2">50+</div>
+                        <p class="text-gray-600">质量改进项目</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl p-6 card-hover">
+                        <div class="text-4xl font-bold gradient-text mb-2">30%</div>
+                        <p class="text-gray-600">平均不良率下降</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl p-6 card-hover">
+                        <div class="text-4xl font-bold gradient-text mb-2">200+</div>
+                        <p class="text-gray-600">培训学员人次</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能专长 -->
+    <section id="skills" class="py-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in visible">
+                <p class="text-sky-600 font-medium mb-2">Skills</p>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">技能专长</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-sky-500 to-cyan-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- 质量工具 -->
+                <div class="fade-in visible">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
+                        <span class="w-10 h-10 bg-sky-100 rounded-xl flex items-center justify-center text-xl">🔧</span>
+                        质量工具
+                    </h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-700">FMEA (DFMEA / PFMEA)</span>
+                                <span class="text-sky-600 font-medium">95%</span>
+                            </div>
+                            <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="skill-bar h-full bg-gradient-to-r from-sky-500 to-cyan-500 rounded-full" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-700">SPC 统计过程控制</span>
+                                <span class="text-sky-600 font-medium">90%</span>
+                            </div>
+                            <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="skill-bar h-full bg-gradient-to-r from-sky-500 to-cyan-500 rounded-full" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-700">MSA 测量系统分析</span>
+                                <span class="text-sky-600 font-medium">88%</span>
+                            </div>
+                            <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="skill-bar h-full bg-gradient-to-r from-sky-500 to-cyan-500 rounded-full" style="width: 88%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-700">APQP / PPAP</span>
+                                <span class="text-sky-600 font-medium">92%</span>
+                            </div>
+                            <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="skill-bar h-full bg-gradient-to-r from-sky-500 to-cyan-500 rounded-full" style="width: 92%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-700">8D / 5Why 问题解决</span>
+                                <span class="text-sky-600 font-medium">95%</span>
+                            </div>
+                            <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="skill-bar h-full bg-gradient-to-r from-sky-500 to-cyan-500 rounded-full" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 专业领域 -->
+                <div class="fade-in visible" style="transition-delay: 0.2s;">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
+                        <span class="w-10 h-10 bg-cyan-100 rounded-xl flex items-center justify-center text-xl">🎯</span>
+                        专业领域
+                    </h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white rounded-xl p-5 card-hover border border-gray-100">
+                            <div class="text-3xl mb-3">🏭</div>
+                            <h4 class="font-semibold text-gray-900 mb-1">体系建设</h4>
+                            <p class="text-sm text-gray-500">IATF 16949 / ISO 9001</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 card-hover border border-gray-100">
+                            <div class="text-3xl mb-3">📊</div>
+                            <h4 class="font-semibold text-gray-900 mb-1">过程质量</h4>
+                            <p class="text-sm text-gray-500">制程管控 / 质量门管理</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 card-hover border border-gray-100">
+                            <div class="text-3xl mb-3">🤝</div>
+                            <h4 class="font-semibold text-gray-900 mb-1">供应商质量</h4>
+                            <p class="text-sm text-gray-500">SQE / 供应商开发</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 card-hover border border-gray-100">
+                            <div class="text-3xl mb-3">📈</div>
+                            <h4 class="font-semibold text-gray-900 mb-1">持续改进</h4>
+                            <p class="text-sm text-gray-500">Lean / 6σ / Kaizen</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 card-hover border border-gray-100">
+                            <div class="text-3xl mb-3">🚗</div>
+                            <h4 class="font-semibold text-gray-900 mb-1">客户质量</h4>
+                            <p class="text-sm text-gray-500">客户投诉 / 整车Audit</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 card-hover border border-gray-100">
+                            <div class="text-3xl mb-3">💻</div>
+                            <h4 class="font-semibold text-gray-900 mb-1">质量信息化</h4>
+                            <p class="text-sm text-gray-500">QMS / MES 系统实施</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 软件技能 -->
+            <div class="mt-16 fade-in visible">
+                <h3 class="text-xl font-semibold text-gray-900 mb-6 text-center">常用工具软件</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="px-5 py-2.5 bg-white rounded-full text-sm font-medium text-gray-700 border border-gray-200 card-hover">Minitab</span>
+                    <span class="px-5 py-2.5 bg-white rounded-full text-sm font-medium text-gray-700 border border-gray-200 card-hover">JMP</span>
+                    <span class="px-5 py-2.5 bg-white rounded-full text-sm font-medium text-gray-700 border border-gray-200 card-hover">SAP QM</span>
+                    <span class="px-5 py-2.5 bg-white rounded-full text-sm font-medium text-gray-700 border border-gray-200 card-hover">AutoCAD</span>
+                    <span class="px-5 py-2.5 bg-white rounded-full text-sm font-medium text-gray-700 border border-gray-200 card-hover">CATIA</span>
+                    <span class="px-5 py-2.5 bg-white rounded-full text-sm font-medium text-gray-700 border border-gray-200 card-hover">Excel高级</span>
+                    <span class="px-5 py-2.5 bg-white rounded-full text-sm font-medium text-gray-700 border border-gray-200 card-hover">Power BI</span>
+                    <span class="px-5 py-2.5 bg-white rounded-full text-sm font-medium text-gray-700 border border-gray-200 card-hover">Python</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作经历 -->
+    <!-- 抖音精选 -->
+    <section id="douyin" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in visible">
+                <p class="text-sky-600 font-medium mb-2">Douyin</p>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">抖音精选</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-sky-500 to-cyan-500 mx-auto rounded-full"></div>
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">质量知识短视频，用更轻松的方式学习质量管理</p>
+                <a href="https://www.douyin.com" target="_blank" class="inline-flex items-center gap-2 mt-6 px-6 py-2.5 bg-black text-white rounded-full text-sm font-medium hover:bg-gray-800 transition-colors">
+                    <span class="text-lg">🎵</span>
+                    关注我的抖音
+                </a>
+            </div>
+            
+            <!-- 视频网格 -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- 视频卡片 1 -->
+                <a href="https://www.douyin.com" target="_blank" class="group fade-in visible">
+                    <div class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 card-hover">
+                        <div class="absolute inset-0 bg-gradient-to-br from-sky-400 via-cyan-500 to-teal-500 flex items-center justify-center">
+                            <span class="text-6xl">📊</span>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30">
+                            <div class="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-3 right-3 px-2 py-1 bg-black/70 text-white text-xs rounded-md">
+                            01:23
+                        </div>
+                        <div class="absolute top-3 right-3 px-2.5 py-1 bg-black/50 text-white text-xs rounded-full flex items-center gap-1">
+                            <span>❤️</span>
+                            <span>1.2w</span>
+                        </div>
+                    </div>
+                    <h4 class="mt-3 text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-sky-600 transition-colors">
+                        FMEA七步法详解，一文搞懂DFMEA和PFMEA的区别
+                    </h4>
+                    <p class="mt-1 text-xs text-gray-400">质量工具系列</p>
+                </a>
+                
+                <!-- 视频卡片 2 -->
+                <a href="https://www.douyin.com" target="_blank" class="group fade-in visible" style="transition-delay: 0.1s;">
+                    <div class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 card-hover">
+                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600 flex items-center justify-center">
+                            <span class="text-6xl">📉</span>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30">
+                            <div class="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-3 right-3 px-2 py-1 bg-black/70 text-white text-xs rounded-md">
+                            02:45
+                        </div>
+                        <div class="absolute top-3 right-3 px-2.5 py-1 bg-black/50 text-white text-xs rounded-full flex items-center gap-1">
+                            <span>❤️</span>
+                            <span>8520</span>
+                        </div>
+                    </div>
+                    <h4 class="mt-3 text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-sky-600 transition-colors">
+                        SPC控制图怎么看？3分钟学会Xbar-R图判读
+                    </h4>
+                    <p class="mt-1 text-xs text-gray-400">SPC实战系列</p>
+                </a>
+                
+                <!-- 视频卡片 3 -->
+                <a href="https://www.douyin.com" target="_blank" class="group fade-in visible" style="transition-delay: 0.2s;">
+                    <div class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 card-hover">
+                        <div class="absolute inset-0 bg-gradient-to-br from-violet-400 via-purple-500 to-fuchsia-600 flex items-center justify-center">
+                            <span class="text-6xl">🎯</span>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30">
+                            <div class="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-3 right-3 px-2 py-1 bg-black/70 text-white text-xs rounded-md">
+                            01:58
+                        </div>
+                        <div class="absolute top-3 right-3 px-2.5 py-1 bg-black/50 text-white text-xs rounded-full flex items-center gap-1">
+                            <span>❤️</span>
+                            <span>2.5w</span>
+                        </div>
+                    </div>
+                    <h4 class="mt-3 text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-sky-600 transition-colors">
+                        8D报告怎么写？新手也能快速上手的完整模板
+                    </h4>
+                    <p class="mt-1 text-xs text-gray-400">问题解决系列</p>
+                </a>
+                
+                <!-- 视频卡片 4 -->
+                <a href="https://www.douyin.com" target="_blank" class="group fade-in visible" style="transition-delay: 0.3s;">
+                    <div class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 card-hover">
+                        <div class="absolute inset-0 bg-gradient-to-br from-amber-400 via-orange-500 to-red-500 flex items-center justify-center">
+                            <span class="text-6xl">⚙️</span>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30">
+                            <div class="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-3 right-3 px-2 py-1 bg-black/70 text-white text-xs rounded-md">
+                            03:12
+                        </div>
+                        <div class="absolute top-3 right-3 px-2.5 py-1 bg-black/50 text-white text-xs rounded-full flex items-center gap-1">
+                            <span>❤️</span>
+                            <span>6780</span>
+                        </div>
+                    </div>
+                    <h4 class="mt-3 text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-sky-600 transition-colors">
+                        MSA测量系统分析，GR&amp;R小于10%才合格？
+                    </h4>
+                    <p class="mt-1 text-xs text-gray-400">MSA系列</p>
+                </a>
+                
+                <!-- 视频卡片 5 -->
+                <a href="https://www.douyin.com" target="_blank" class="group fade-in visible">
+                    <div class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 card-hover">
+                        <div class="absolute inset-0 bg-gradient-to-br from-rose-400 via-pink-500 to-fuchsia-600 flex items-center justify-center">
+                            <span class="text-6xl">🚗</span>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30">
+                            <div class="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-3 right-3 px-2 py-1 bg-black/70 text-white text-xs rounded-md">
+                            02:30
+                        </div>
+                        <div class="absolute top-3 right-3 px-2.5 py-1 bg-black/50 text-white text-xs rounded-full flex items-center gap-1">
+                            <span>❤️</span>
+                            <span>3.1w</span>
+                        </div>
+                    </div>
+                    <h4 class="mt-3 text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-sky-600 transition-colors">
+                        汽车行业质量工程师的一天，带你逛整车厂
+                    </h4>
+                    <p class="mt-1 text-xs text-gray-400">职场vlog</p>
+                </a>
+                
+                <!-- 视频卡片 6 -->
+                <a href="https://www.douyin.com" target="_blank" class="group fade-in visible" style="transition-delay: 0.1s;">
+                    <div class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 card-hover">
+                        <div class="absolute inset-0 bg-gradient-to-br from-slate-400 via-gray-600 to-gray-800 flex items-center justify-center">
+                            <span class="text-6xl">🏭</span>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30">
+                            <div class="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-3 right-3 px-2 py-1 bg-black/70 text-white text-xs rounded-md">
+                            04:05
+                        </div>
+                        <div class="absolute top-3 right-3 px-2.5 py-1 bg-black/50 text-white text-xs rounded-full flex items-center gap-1">
+                            <span>❤️</span>
+                            <span>9800</span>
+                        </div>
+                    </div>
+                    <h4 class="mt-3 text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-sky-600 transition-colors">
+                        IATF 16949体系审核现场，审核员都在查什么？
+                    </h4>
+                    <p class="mt-1 text-xs text-gray-400">体系审核系列</p>
+                </a>
+                
+                <!-- 视频卡片 7 -->
+                <a href="https://www.douyin.com" target="_blank" class="group fade-in visible" style="transition-delay: 0.2s;">
+                    <div class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 card-hover">
+                        <div class="absolute inset-0 bg-gradient-to-br from-lime-400 via-green-500 to-emerald-600 flex items-center justify-center">
+                            <span class="text-6xl">📈</span>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30">
+                            <div class="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-3 right-3 px-2 py-1 bg-black/70 text-white text-xs rounded-md">
+                            01:45
+                        </div>
+                        <div class="absolute top-3 right-3 px-2.5 py-1 bg-black/50 text-white text-xs rounded-full flex items-center gap-1">
+                            <span>❤️</span>
+                            <span>1.8w</span>
+                        </div>
+                    </div>
+                    <h4 class="mt-3 text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-sky-600 transition-colors">
+                        5Why分析法，连续问5个为什么找到根本原因
+                    </h4>
+                    <p class="mt-1 text-xs text-gray-400">质量工具系列</p>
+                </a>
+                
+                <!-- 视频卡片 8 -->
+                <a href="https://www.douyin.com" target="_blank" class="group fade-in visible" style="transition-delay: 0.3s;">
+                    <div class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 card-hover">
+                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 via-blue-500 to-sky-600 flex items-center justify-center">
+                            <span class="text-6xl">💡</span>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30">
+                            <div class="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-3 right-3 px-2 py-1 bg-black/70 text-white text-xs rounded-md">
+                            02:20
+                        </div>
+                        <div class="absolute top-3 right-3 px-2.5 py-1 bg-black/50 text-white text-xs rounded-full flex items-center gap-1">
+                            <span>❤️</span>
+                            <span>4.2w</span>
+                        </div>
+                    </div>
+                    <h4 class="mt-3 text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-sky-600 transition-colors">
+                        质量工程师必备的10个Excel技巧，效率翻倍
+                    </h4>
+                    <p class="mt-1 text-xs text-gray-400">效率工具系列</p>
+                </a>
+            </div>
+            
+            <!-- 数据统计 -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 fade-in visible">
+                <div class="bg-gray-50 rounded-2xl p-6 text-center card-hover">
+                    <div class="text-3xl font-bold gradient-text mb-1">50+</div>
+                    <p class="text-sm text-gray-500">视频作品</p>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-6 text-center card-hover">
+                    <div class="text-3xl font-bold gradient-text mb-1">10w+</div>
+                    <p class="text-sm text-gray-500">总获赞</p>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-6 text-center card-hover">
+                    <div class="text-3xl font-bold gradient-text mb-1">5w+</div>
+                    <p class="text-sm text-gray-500">粉丝关注</p>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-6 text-center card-hover">
+                    <div class="text-3xl font-bold gradient-text mb-1">100w+</div>
+                    <p class="text-sm text-gray-500">总播放量</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- 项目案例 -->
+    <section id="projects" class="py-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in visible">
+                <p class="text-sky-600 font-medium mb-2">Projects</p>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">项目案例</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-sky-500 to-cyan-500 mx-auto rounded-full"></div>
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">精选质量改进项目案例，展示问题分析与解决的完整思路</p>
+            </div>
+            
+            <!-- 项目筛选标签 -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 fade-in visible">
+                <button class="project-tag px-5 py-2 bg-gray-900 text-white rounded-full text-sm font-medium" data-filter="all">全部项目</button>
+                <button class="project-tag px-5 py-2 bg-white text-gray-600 rounded-full text-sm font-medium border border-gray-200 hover:border-gray-300" data-filter="process">过程改进</button>
+                <button class="project-tag px-5 py-2 bg-white text-gray-600 rounded-full text-sm font-medium border border-gray-200 hover:border-gray-300" data-filter="supplier">供应商质量</button>
+                <button class="project-tag px-5 py-2 bg-white text-gray-600 rounded-full text-sm font-medium border border-gray-200 hover:border-gray-300" data-filter="system">体系建设</button>
+                <button class="project-tag px-5 py-2 bg-white text-gray-600 rounded-full text-sm font-medium border border-gray-200 hover:border-gray-300" data-filter="customer">客户投诉</button>
+            </div>
+            
+            <!-- 项目卡片 -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectGrid">
+                <!-- 项目1 -->
+                <div class="bg-white rounded-2xl overflow-hidden card-hover border border-gray-100 fade-in project-item visible" data-category="process">
+                    <div class="h-48 bg-gradient-to-br from-sky-400 to-cyan-500 flex items-center justify-center text-6xl">
+                        📊
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs px-2.5 py-1 bg-sky-50 text-sky-600 rounded-full font-medium">过程改进</span>
+                            <span class="text-xs text-gray-400">2023</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">动力电池焊接质量提升</h4>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-2">
+                            运用DOE试验设计优化激光焊接参数，结合SPC实时监控，将焊接不良率从2.5%降至0.3%。
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex -space-x-2">
+                                <span class="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center text-xs text-green-600 font-bold">↓</span>
+                                <span class="text-sm text-gray-600 ml-3">不良率下降 88%</span>
+                            </div>
+                            <button class="text-sky-600 text-sm font-medium hover:text-sky-700">查看详情 →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 项目2 -->
+                <div class="bg-white rounded-2xl overflow-hidden card-hover border border-gray-100 fade-in project-item visible" data-category="supplier" style="transition-delay: 0.1s;">
+                    <div class="h-48 bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-6xl">
+                        🤝
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs px-2.5 py-1 bg-emerald-50 text-emerald-600 rounded-full font-medium">供应商质量</span>
+                            <span class="text-xs text-gray-400">2023</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">塑胶件供应商质量提升</h4>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-2">
+                            对核心供应商开展质量帮扶，建立分级管理机制，供应商批次合格率从85%提升至98%。
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex -space-x-2">
+                                <span class="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center text-xs text-green-600 font-bold">↑</span>
+                                <span class="text-sm text-gray-600 ml-3">合格率提升 13%</span>
+                            </div>
+                            <button class="text-sky-600 text-sm font-medium hover:text-sky-700">查看详情 →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 项目3 -->
+                <div class="bg-white rounded-2xl overflow-hidden card-hover border border-gray-100 fade-in project-item visible" data-category="system" style="transition-delay: 0.2s;">
+                    <div class="h-48 bg-gradient-to-br from-violet-400 to-purple-500 flex items-center justify-center text-6xl">
+                        🏭
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs px-2.5 py-1 bg-violet-50 text-violet-600 rounded-full font-medium">体系建设</span>
+                            <span class="text-xs text-gray-400">2022</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">IATF 16949 体系搭建</h4>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-2">
+                            从零搭建IATF 16949质量管理体系，编制质量手册及30+份程序文件，一次性通过认证审核。
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex -space-x-2">
+                                <span class="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center text-xs text-green-600 font-bold">✓</span>
+                                <span class="text-sm text-gray-600 ml-3">一次通过认证</span>
+                            </div>
+                            <button class="text-sky-600 text-sm font-medium hover:text-sky-700">查看详情 →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 项目4 -->
+                <div class="bg-white rounded-2xl overflow-hidden card-hover border border-gray-100 fade-in project-item visible" data-category="customer">
+                    <div class="h-48 bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-6xl">
+                        🚗
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs px-2.5 py-1 bg-amber-50 text-amber-600 rounded-full font-medium">客户投诉</span>
+                            <span class="text-xs text-gray-400">2022</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">异响问题8D根本原因分析</h4>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-2">
+                            运用8D方法解决客户反馈的底盘异响问题，通过鱼骨图+5Why分析找到根本原因，永久消除。
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex -space-x-2">
+                                <span class="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center text-xs text-green-600 font-bold">0</span>
+                                <span class="text-sm text-gray-600 ml-3">复发投诉</span>
+                            </div>
+                            <button class="text-sky-600 text-sm font-medium hover:text-sky-700">查看详情 →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 项目5 -->
+                <div class="bg-white rounded-2xl overflow-hidden card-hover border border-gray-100 fade-in project-item visible" data-category="process" style="transition-delay: 0.1s;">
+                    <div class="h-48 bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center text-6xl">
+                        📈
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs px-2.5 py-1 bg-rose-50 text-rose-600 rounded-full font-medium">过程改进</span>
+                            <span class="text-xs text-gray-400">2021</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">SPC系统实施与推广</h4>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-2">
+                            主导SPC统计过程控制系统上线，覆盖20条产线50个关键特性，实现质量数据实时监控预警。
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex -space-x-2">
+                                <span class="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center text-xs text-green-600 font-bold">50+</span>
+                                <span class="text-sm text-gray-600 ml-3">关键特性覆盖</span>
+                            </div>
+                            <button class="text-sky-600 text-sm font-medium hover:text-sky-700">查看详情 →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 项目6 -->
+                <div class="bg-white rounded-2xl overflow-hidden card-hover border border-gray-100 fade-in project-item visible" data-category="system" style="transition-delay: 0.2s;">
+                    <div class="h-48 bg-gradient-to-br from-slate-400 to-gray-600 flex items-center justify-center text-6xl">
+                        💻
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs px-2.5 py-1 bg-slate-50 text-slate-600 rounded-full font-medium">体系建设</span>
+                            <span class="text-xs text-gray-400">2021</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">QMS质量管理系统建设</h4>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-2">
+                            参与QMS系统选型与实施，打通不合格品管理、纠正预防措施、内审管理等模块，提升效率60%。
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex -space-x-2">
+                                <span class="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center text-xs text-green-600 font-bold">↑</span>
+                                <span class="text-sm text-gray-600 ml-3">效率提升 60%</span>
+                            </div>
+                            <button class="text-sky-600 text-sm font-medium hover:text-sky-700">查看详情 →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 培训课堂 -->
+    <section id="training" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in visible">
+                <p class="text-sky-600 font-medium mb-2">Training</p>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">培训课堂</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-sky-500 to-cyan-500 mx-auto rounded-full"></div>
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">质量知识分享与培训课程，助力质量人共同成长</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 课程1 -->
+                <div class="bg-gray-50 rounded-2xl p-6 card-hover fade-in visible">
+                    <div class="w-14 h-14 bg-gradient-to-br from-sky-400 to-cyan-500 rounded-2xl flex items-center justify-center text-2xl mb-5">
+                        🔍
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">FMEA 实战精讲</h4>
+                    <p class="text-sm text-gray-500 mb-4">AIAG-VDA FMEA 七步法详解与案例实操</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-400">12课时</span>
+                        <span class="text-sky-600 font-medium">中级</span>
+                    </div>
+                </div>
+                
+                <!-- 课程2 -->
+                <div class="bg-gray-50 rounded-2xl p-6 card-hover fade-in visible" style="transition-delay: 0.1s;">
+                    <div class="w-14 h-14 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl flex items-center justify-center text-2xl mb-5">
+                        📉
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">SPC 统计过程控制</h4>
+                    <p class="text-sm text-gray-500 mb-4">控制图原理、过程能力分析与Minitab应用</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-400">8课时</span>
+                        <span class="text-emerald-600 font-medium">初级</span>
+                    </div>
+                </div>
+                
+                <!-- 课程3 -->
+                <div class="bg-gray-50 rounded-2xl p-6 card-hover fade-in visible" style="transition-delay: 0.2s;">
+                    <div class="w-14 h-14 bg-gradient-to-br from-violet-400 to-purple-500 rounded-2xl flex items-center justify-center text-2xl mb-5">
+                        🎯
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">8D 问题解决法</h4>
+                    <p class="text-sm text-gray-500 mb-4">8D报告撰写、5Why分析与根本原因验证</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-400">6课时</span>
+                        <span class="text-violet-600 font-medium">初级</span>
+                    </div>
+                </div>
+                
+                <!-- 课程4 -->
+                <div class="bg-gray-50 rounded-2xl p-6 card-hover fade-in visible" style="transition-delay: 0.3s;">
+                    <div class="w-14 h-14 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center text-2xl mb-5">
+                        ⚙️
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">MSA 测量系统分析</h4>
+                    <p class="text-sm text-gray-500 mb-4">GR&amp;R研究、偏倚分析与测量不确定度</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-400">10课时</span>
+                        <span class="text-amber-600 font-medium">中级</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 培训资源 -->
+            <div class="mt-16 bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-8 md:p-12 fade-in visible">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">质量知识资源库</h3>
+                        <p class="text-gray-300 mb-6">
+                            整理了汽车行业质量工程师必备的学习资料，包括标准文件、模板工具、案例集等，
+                            持续更新中，欢迎交流探讨。
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-white/10 text-white text-sm rounded-full">IATF 16949 标准解读</span>
+                            <span class="px-4 py-2 bg-white/10 text-white text-sm rounded-full">五大工具模板包</span>
+                            <span class="px-4 py-2 bg-white/10 text-white text-sm rounded-full">8D报告模板</span>
+                            <span class="px-4 py-2 bg-white/10 text-white text-sm rounded-full">质量表单大全</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/10 backdrop-blur rounded-2xl p-5 text-center">
+                            <div class="text-3xl font-bold text-white mb-1">50+</div>
+                            <p class="text-sm text-gray-400">技术文章</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur rounded-2xl p-5 text-center">
+                            <div class="text-3xl font-bold text-white mb-1">30+</div>
+                            <p class="text-sm text-gray-400">视频课程</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur rounded-2xl p-5 text-center">
+                            <div class="text-3xl font-bold text-white mb-1">100+</div>
+                            <p class="text-sm text-gray-400">模板工具</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur rounded-2xl p-5 text-center">
+                            <div class="text-3xl font-bold text-white mb-1">20+</div>
+                            <p class="text-sm text-gray-400">案例分析</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 质量知识测验 -->
+    <section id="quiz" class="py-24 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in visible">
+                <p class="text-sky-600 font-medium mb-2">Quiz</p>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">质量知识测验</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-sky-500 to-cyan-500 mx-auto rounded-full"></div>
+                <p class="text-gray-500 mt-4">来测测你的质量知识掌握程度吧！</p>
+            </div>
+            
+            <div class="bg-white rounded-3xl shadow-lg overflow-hidden fade-in visible">
+                <!-- 测验头部 -->
+                <div class="bg-gradient-to-r from-sky-500 to-cyan-500 px-8 py-6 text-white">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold">质量工程师知识挑战</h3>
+                            <p class="text-sky-100 text-sm mt-1">共 5 道题 · 每题 20 分 · 满分 100 分</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-3xl font-bold" id="scoreDisplay">0</div>
+                            <div class="text-sm text-sky-100">当前得分</div>
+                        </div>
+                    </div>
+                    <!-- 进度条 -->
+                    <div class="mt-4 h-2 bg-white/20 rounded-full overflow-hidden">
+                        <div class="h-full bg-white rounded-full transition-all duration-300" id="progressBar" style="width: 0%;"></div>
+                    </div>
+                    <div class="flex justify-between mt-2 text-sm text-sky-100">
+                        <span id="questionProgress">第 1 / 5 题</span>
+                        <span id="quizStatus">答题中</span>
+                    </div>
+                </div>
+                
+                <!-- 题目区域 -->
+                <div class="p-8" id="quizContent">
+                    <div id="questionArea">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-6" id="questionText">准备好挑战质量知识了吗？点击下方按钮开始测验！</h4>
+                        <div class="space-y-3" id="optionsArea">
+                            <!-- 选项将通过JS动态生成 -->
+                        <div class="p-6 bg-gradient-to-r from-sky-50 to-cyan-50 rounded-xl">
+            <h5 class="font-semibold text-gray-800 mb-2">📝 测验说明：</h5>
+            <ul class="text-sm text-gray-600 space-y-1.5">
+                <li>• 共5道选择题，每题20分，满分100分</li>
+                <li>• 涵盖FMEA、SPC、MSA、8D、PPAP五大工具知识</li>
+                <li>• 答题后立即显示正确答案和详细解析</li>
+                <li>• 可以反复答题，巩固知识记忆</li>
+            </ul>
+        </div><div class="p-6 bg-gradient-to-r from-sky-50 to-cyan-50 rounded-xl">
+            <h5 class="font-semibold text-gray-800 mb-2">📝 测验说明：</h5>
+            <ul class="text-sm text-gray-600 space-y-1.5">
+                <li>• 共5道选择题，每题20分，满分100分</li>
+                <li>• 涵盖FMEA、SPC、MSA、8D、PPAP五大工具知识</li>
+                <li>• 答题后立即显示正确答案和详细解析</li>
+                <li>• 可以反复答题，巩固知识记忆</li>
+            </ul>
+        </div></div>
+                        <div class="mt-6 p-4 rounded-xl hidden" id="explanationArea">
+                            <p class="text-sm font-medium text-gray-700 mb-1">💡 解析：</p>
+                            <p class="text-sm text-gray-600" id="explanationText"></p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex justify-center">
+                        <button id="startQuizBtn" class="px-8 py-3 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-colors">
+                            开始答题
+                        </button>
+                        <button id="nextQuestionBtn" class="hidden px-8 py-3 bg-sky-600 text-white rounded-full font-medium hover:bg-sky-700 transition-colors">
+                            下一题
+                        </button>
+                        <button id="restartQuizBtn" class="hidden px-8 py-3 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-colors">
+                            重新答题
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in visible">
+                <p class="text-sky-600 font-medium mb-2">Contact</p>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">联系我</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-sky-500 to-cyan-500 mx-auto rounded-full"></div>
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">欢迎交流质量管理经验，共同探讨质量提升之道</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- 联系信息 -->
+                <div class="fade-in visible">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-8">保持联系</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        如果你对质量工程有热情，或是在工作中遇到质量相关的问题想要探讨，
+                        欢迎随时与我联系。我很乐意与同行交流学习，共同进步。
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center text-xl">
+                                📧
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">电子邮箱</p>
+                                <p class="font-medium text-gray-900">quality.engineer@example.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-xl">
+                                💬
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">微信公众号</p>
+                                <p class="font-medium text-gray-900">质量工程师成长笔记</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-violet-50 rounded-xl flex items-center justify-center text-xl">
+                                💼
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">LinkedIn</p>
+                                <p class="font-medium text-gray-900">linkedin.com/in/quality-engineer</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-xl">
+                                📍
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">所在城市</p>
+                                <p class="font-medium text-gray-900">中国 · 上海</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 联系表单 -->
+                <div class="fade-in visible" style="transition-delay: 0.2s;">
+                    <div class="bg-gray-50 rounded-3xl p-8">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-6">发送消息</h3>
+                        <form id="contactForm" class="space-y-5">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">姓名</label>
+                                <input type="text" placeholder="请输入您的姓名" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-sky-500 focus:ring-2 focus:ring-sky-100 outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">邮箱</label>
+                                <input type="email" placeholder="请输入您的邮箱" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-sky-500 focus:ring-2 focus:ring-sky-100 outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">主题</label>
+                                <select class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-sky-500 focus:ring-2 focus:ring-sky-100 outline-none transition-all bg-white">
+                                    <option>项目合作咨询</option>
+                                    <option>质量技术交流</option>
+                                    <option>培训课程咨询</option>
+                                    <option>其他</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">消息内容</label>
+                                <textarea rows="4" placeholder="请输入您想说的话..." class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-sky-500 focus:ring-2 focus:ring-sky-100 outline-none transition-all resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3 bg-gray-900 text-white rounded-xl font-medium hover:bg-gray-800 transition-colors">
+                                发送消息
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <h4 class="text-xl font-bold mb-4">Quality Engineer</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-md">
+                        一名专注于汽车行业的质量工程师，致力于用专业的质量管理知识，
+                        帮助企业提升产品质量，创造更大价值。
+                    </p>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">快速导航</h5>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#about" class="hover:text-white transition-colors">关于我</a></li>
+                        <li><a href="#skills" class="hover:text-white transition-colors">技能专长</a></li>
+                        <li><a href="#projects" class="hover:text-white transition-colors">项目案例</a></li>
+                        <li><a href="#training" class="hover:text-white transition-colors">培训课堂</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">关注我</h5>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <span class="text-lg">📱</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <span class="text-lg">💬</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <span class="text-lg">📧</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">© 2024 质量工程师个人作品集. All rights reserved.</p>
+                <p class="text-sm text-gray-500 mt-2 md:mt-0">用心做好每一件事，质量是最好的名片</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-gray-900 text-white rounded-full shadow-lg transition-all hover:bg-gray-800 z-40 opacity-0 invisible">
+        <svg class="w-5 h-5 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 点击菜单项后关闭移动端菜单
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 滚动动画
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        fadeElements.forEach(el => observer.observe(el));
+
+        // 回到顶部按钮
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 项目筛选
+        const filterBtns = document.querySelectorAll('.project-tag');
+        const projectItems = document.querySelectorAll('.project-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 更新按钮状态
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-gray-900', 'text-white');
+                    b.classList.add('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+                });
+                btn.classList.add('bg-gray-900', 'text-white');
+                btn.classList.remove('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+                
+                // 筛选项目
+                const filter = btn.dataset.filter;
+                projectItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 质量知识测验
+        const quizData = [
+            {
+                question: "在IATF 16949中，FMEA的RPN值是由哪三个因素相乘得到的？",
+                options: [
+                    "严重度(S)、发生度(O)、探测度(D)",
+                    "严重度(S)、频率(F)、风险(R)",
+                    "重要度(I)、发生度(O)、难度(D)",
+                    "严重度(S)、概率(P)、影响度(I)"
+                ],
+                correct: 0,
+                explanation: "FMEA的风险优先数(RPN) = 严重度(Severity) × 发生度(Occurrence) × 探测度(Detection)，取值范围为1-1000。RPN越高表示风险越大，需要优先采取改进措施。"
+            },
+            {
+                question: "SPC控制图中，过程稳定的判断标准之一是连续多少个点落在控制限内且无异常趋势？",
+                options: [
+                    "连续15个点",
+                    "连续20个点",
+                    "连续25个点",
+                    "连续30个点"
+                ],
+                correct: 2,
+                explanation: "根据判稳准则，连续25个点落在控制限内且无异常趋势，可以判定过程处于统计控制状态（稳定状态）。这是SPC中最基本的判稳准则之一。"
+            },
+            {
+                question: "在MSA测量系统分析中，GR&R（量具重复性与再现性）通常接受的标准是小于多少？",
+                options: [
+                    "小于5%",
+                    "小于10%",
+                    "小于15%",
+                    "小于30%"
+                ],
+                correct: 1,
+                explanation: "GR&R小于10%通常被认为是可接受的测量系统；10%-30%之间需要根据实际情况判断是否可接受；大于30%则测量系统不可接受，需要改进。"
+            },
+            {
+                question: "8D问题解决法中，哪个步骤的核心是找到问题的根本原因？",
+                options: [
+                    "D2 描述问题",
+                    "D4 根本原因分析",
+                    "D5 制定纠正措施",
+                    "D7 预防再发生"
+                ],
+                correct: 1,
+                explanation: "D4根本原因分析是8D方法的核心步骤，需要运用5Why、鱼骨图、故障树分析等工具，深入挖掘问题产生的根本原因，而不仅仅是表面原因。"
+            },
+            {
+                question: "PPAP生产件批准程序中，默认要求提交的等级是几级？",
+                options: [
+                    "等级1",
+                    "等级2",
+                    "等级3",
+                    "等级4"
+                ],
+                correct: 2,
+                explanation: "PPAP共分为5个提交等级（1-5级），等级3是默认提交等级，要求提交所有的文件和样品。等级1-2提交的文件较少，等级4-5则有更严格的要求。"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let quizStarted = false;
+        let answered = false;
+
+        const questionText = document.getElementById('questionText');
+        const optionsArea = document.getElementById('optionsArea');
+        const startQuizBtn = document.getElementById('startQuizBtn');
+        const nextQuestionBtn = document.getElementById('nextQuestionBtn');
+        const restartQuizBtn = document.getElementById('restartQuizBtn');
+        const scoreDisplay = document.getElementById('scoreDisplay');
+        const progressBar = document.getElementById('progressBar');
+        const questionProgress = document.getElementById('questionProgress');
+        const quizStatus = document.getElementById('quizStatus');
+        const explanationArea = document.getElementById('explanationArea');
+        const explanationText = document.getElementById('explanationText');
+
+        function loadQuestion() {
+            answered = false;
+            const q = quizData[currentQuestion];
+            questionText.textContent = q.question;
+            optionsArea.innerHTML = '';
+            explanationArea.classList.add('hidden');
+            
+            q.options.forEach((option, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option w-full text-left px-5 py-4 border-2 border-gray-200 rounded-xl font-medium text-gray-700';
+                btn.innerHTML = `<span class="inline-block w-7 h-7 bg-gray-100 rounded-full text-center leading-7 mr-3 text-sm">${String.fromCharCode(65 + index)}</span>${option}`;
+                btn.addEventListener('click', () => selectAnswer(index));
+                optionsArea.appendChild(btn);
+            });
+            
+            questionProgress.textContent = `第 ${currentQuestion + 1} / ${quizData.length} 题`;
+            progressBar.style.width = `${((currentQuestion + 1) / quizData.length) * 100}%`;
+        }
+
+        function selectAnswer(index) {
+            if (answered) return;
+            answered = true;
+            
+            const q = quizData[currentQuestion];
+            const options = optionsArea.querySelectorAll('.quiz-option');
+            
+            options.forEach((opt, i) => {
+                opt.style.pointerEvents = 'none';
+                if (i === q.correct) {
+                    opt.classList.add('correct');
+                    opt.classList.remove('border-gray-200');
+                } else if (i === index && index !== q.correct) {
+                    opt.classList.add('wrong');
+                    opt.classList.remove('border-gray-200');
+                }
+            });
+            
+            if (index === q.correct) {
+                score += 20;
+                scoreDisplay.textContent = score;
+            }
+            
+            explanationText.textContent = q.explanation;
+            explanationArea.classList.remove('hidden');
+            explanationArea.classList.add('bg-gray-50');
+            
+            if (currentQuestion < quizData.length - 1) {
+                nextQuestionBtn.classList.remove('hidden');
+            } else {
+                setTimeout(() => {
+                    showResult();
+                }, 1500);
+            }
+        }
+
+        function showResult() {
+            quizStatus.textContent = '已完成';
+            questionText.innerHTML = `🎉 测验完成！<br><span class="text-sky-600">你的得分：${score} / 100</span>`;
+            optionsArea.innerHTML = '';
+            
+            let message = '';
+            if (score >= 90) {
+                message = '太棒了！你是质量知识达人！🏆';
+            } else if (score >= 70) {
+                message = '不错哦！继续加油，你已经掌握了核心知识！💪';
+            } else if (score >= 50) {
+                message = '还需努力，建议多复习基础知识哦～📚';
+            } else {
+                message = '要加油啦！建议系统学习质量工程师知识！🎯';
+            }
+            
+            const resultMsg = document.createElement('div');
+            resultMsg.className = 'p-6 bg-gradient-to-r from-sky-50 to-cyan-50 rounded-xl text-center';
+            resultMsg.innerHTML = `<p class="text-lg font-medium text-gray-800">${message}</p>`;
+            optionsArea.appendChild(resultMsg);
+            
+            explanationArea.classList.add('hidden');
+            nextQuestionBtn.classList.add('hidden');
+            restartQuizBtn.classList.remove('hidden');
+        }
+
+        startQuizBtn.addEventListener('click', () => {
+            quizStarted = true;
+            startQuizBtn.classList.add('hidden');
+            loadQuestion();
+        });
+
+        nextQuestionBtn.addEventListener('click', () => {
+            currentQuestion++;
+            nextQuestionBtn.classList.add('hidden');
+            loadQuestion();
+        });
+
+        restartQuizBtn.addEventListener('click', () => {
+            currentQuestion = 0;
+            score = 0;
+            scoreDisplay.textContent = '0';
+            quizStatus.textContent = '答题中';
+            restartQuizBtn.classList.add('hidden');
+            loadQuestion();
+        });
+
+        // 初始状态显示欢迎信息
+        questionText.textContent = '准备好挑战质量知识了吗？点击下方按钮开始测验！';
+        const welcomeMsg = document.createElement('div');
+        welcomeMsg.className = 'p-6 bg-gradient-to-r from-sky-50 to-cyan-50 rounded-xl';
+        welcomeMsg.innerHTML = `
+            <h5 class="font-semibold text-gray-800 mb-2">📝 测验说明：</h5>
+            <ul class="text-sm text-gray-600 space-y-1.5">
+                <li>• 共5道选择题，每题20分，满分100分</li>
+                <li>• 涵盖FMEA、SPC、MSA、8D、PPAP五大工具知识</li>
+                <li>• 答题后立即显示正确答案和详细解析</li>
+                <li>• 可以反复答题，巩固知识记忆</li>
+            </ul>
+        `;
+        optionsArea.appendChild(welcomeMsg);
+
+        // 联系表单提交
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('消息已发送！感谢您的联系，我会尽快回复。');
+            e.target.reset();
+        });
+
+        // 导航栏滚动效果
+        const nav = document.querySelector('nav');
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            if (currentScroll > 100) {
+                nav.classList.add('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-sm');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+
+
+
+</body></html>
